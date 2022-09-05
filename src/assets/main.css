@@ -1,0 +1,129 @@
+@import "./base.css";
+
+#app {
+  margin: 0 auto;
+  font-weight: normal;
+  background-color: rgb(18, 18, 19);
+}.app-container{
+  max-width: 1280px;
+}
+
+#navbar{
+  /* left: calc((100vw - 1280px));s */
+  width: 100vw;
+  height: 60px;
+  background-color: rgb(29, 29, 32);
+  font-family: "Nunito", "Helvetica Neue", Arial, sans-serif;
+}#navbar .nav-container{
+  width: 500px;
+}#navbar .nav-item{
+  height: 100%;
+  width: fit-content;
+}.icon-box{
+  width: 32px;
+  height: 32px;
+  background-color: rgb(58, 58, 60);
+  margin: 0 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  color: white;
+}
+
+.main{
+  height: calc(100vh - 66px);
+}
+
+#wordle-grid{
+  margin: 0 auto;
+  /* background-color: white; */
+  width: 350px;
+  height: 420px;
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+}
+
+.grid-item{
+  width: 62px;
+  height: 62px;
+  border: 1px solid gray;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Nunito';
+  text-transform: capitalize;
+  font-size: 24px;
+  margin: 0 2px;
+
+  transition: all 0.8s;
+}
+
+
+/* FOOTER */
+.keyboard{
+  position: absolute;
+  bottom: 10px;
+  height: 212px;
+  margin-top: 2vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}.keyboard-container{
+  width: 470px;
+}
+
+.keyboard-line{
+  margin: 5px 0;
+}
+
+.clav-row{
+  width: 100%;
+  margin: 1vh;
+}
+
+button{
+  background-color: rgb(99, 99, 99);
+  border: 0;
+  border-radius: 6px;
+  width: 43px;
+  height: 60px;
+  margin: 0 3px;
+  padding: 0;
+  color: whitesmoke;
+  font-weight: 700;
+  font-size: 22px;
+  cursor: pointer;
+}
+.dbl-btn{
+  width: 16.5vh;
+}
+.centered{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#alert{
+  position: absolute;
+  top: 10%;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.ml12 {
+  
+  font-weight: 200;
+  font-size: 1.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  /* transition: all 0.8s; */
+}
+
+.ml12 .letter {
+  display: none;
+  display: inline-block;
+  line-height: 1em;
+}
