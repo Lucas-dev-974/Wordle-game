@@ -12,5 +12,6 @@ Node dois être installer sur votre ordinateur
 Git cloner le projet en local sur son ordis
 Ouvrir un terminal à la racine du projet
 Dans le terminal taper:
+    npm install
     npm run dev
     puis aller à l'addresse web données
