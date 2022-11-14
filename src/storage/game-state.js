@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 export const GameStorage =  {
     grid_items: [],
     words_list: ['anime', 'pomme', 'kayak', 'afpar', 'heure',],
@@ -91,7 +92,6 @@ export const GameActions = {
     },
 
     CheckcWord: function({commit, state}, verifyWord){ 
-        verifyWord()
         if(state.game_state.current_word.length < 5){
             alert('Veuillez completer la premiere ligne');
             return false;
@@ -102,11 +102,14 @@ export const GameActions = {
         } 
 
         if(state.game_state.current_word != state.game_state.selected_word){
+            verifyWord()
             alert('Le mot entrer new correspond pa, echec !')
             commit('pushValidatedWord', state.game_state.current_word)
             commit('setCurrentWord', '')
+            
             return false
         }else{
+            verifyWord()
             var textWrapper = document.querySelector('.ml12');
             textWrapper.style.display = 'block'
             textWrapper.textContent   = 'Bravo vous avez trouvez le bon mot !'

@@ -1,7 +1,8 @@
+/* eslint-disable prettier/prettier */
 export default{
     mounted(){
         
-        this.GenerateGrid('wordle-grid')
+        this.GenerateGrid('grid-5x6')
         this.EventListenersSetup()
         // this.SelectWordInWordsList(1, this.gameState().grid_items.length)
     },
@@ -25,7 +26,7 @@ export default{
 
             for(let iterations = 1; iterations <= this.gameState().items_number; iterations++){
                 let item = document.createElement('div')
-                item.classList.add('grid-item')
+                item.classList.add('cell')
                 container.appendChild(item)
             }
         },
@@ -33,7 +34,7 @@ export default{
         EventListenersSetup: function(){
             document.addEventListener('DOMContentLoaded', () => {
                 // Get items of the grid from document and set it to the store game_state
-                this.$store.commit('setGridItems', document.querySelectorAll('.grid-item'))
+                this.$store.commit('setGridItems', document.querySelectorAll('.cell'))
             });
     
             document.addEventListener('keyup', (key_event) => {
@@ -43,13 +44,14 @@ export default{
             
             document.addEventListener('keypress', (key_event) => {
                 this.getCursorIndexInGrid(); 
-
+                
+                
                 if(key_event.code == 'Enter') 
                     this.CheckcWord();
                 
                 if((key_event.code.includes('Key') || key_event.code == 'Semicolon')  && this.gameState().current_word.length < this.gameState().wordSize) 
                     this.setItemValue(this.gameState().grid_items[this.gameState().index], key_event.key);
-    
+                console.log(this.gameState().current_word);
             });
         },
 
@@ -88,6 +90,8 @@ export default{
                     this.$store.dispatch('changeBackgroundColor', {item: this.gameState().grid_items[buffer_index + index], color: 'orange'})
                 }
             });
+
+            
         }
     }
 }
