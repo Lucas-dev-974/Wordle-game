@@ -8,10 +8,8 @@
 <template>
   <Navbar /> 
   
-  <main class="main">
-    <div class="vertical-fit-80 flex align-vertical-center">
-      <Grid />
-    </div>
+  <main>
+    <Grid />
     
     <Keyboard />
   </main>
