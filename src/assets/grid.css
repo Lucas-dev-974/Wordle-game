@@ -1,0 +1,25 @@
+#grid-5x6{
+
+    width: 325px;
+    display: grid;
+    grid-template-columns: 60px 60px 60px 60px 60px;
+    grid-gap:  8px; 
+  
+    margin: 0 auto;
+    margin-top: 3em;
+}
+  
+.cell {
+    color: white;
+    border: 1px solid gray;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 62px;
+    height: 62px;
+    font-size: 24px;
+    font-family: 'Nunito';
+    text-transform: capitalize;
+    
+}

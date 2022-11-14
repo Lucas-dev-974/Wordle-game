@@ -1,0 +1,31 @@
+.keyboard{
+    bottom: 10px;
+    height: 150px;
+    margin-top: 2vh;
+    display: flex;
+    justify-content: center;
+  }.keyboard-container{
+    width: 350px;
+    transform: translateX(5px);
+  }.keyboard-line{
+    margin: 5px 0;
+  }.clav-row{
+    width: 100%;
+  }
+  
+  button{
+    background-color: rgb(99, 99, 99);
+    border: 0;
+    border-radius: 2px;
+    width: 30px;
+    height: 30px;
+    margin: 0 0.4px;
+    color: whitesmoke;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Nunito';
+  }
+  .dbl-btn{
+    width: 9.5vh;
+  }
