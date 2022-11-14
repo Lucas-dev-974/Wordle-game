@@ -1,7 +1,7 @@
 <script src="./js/Keyboard.js"></script>
 
 <template>
-    <section class="centered keyboard">
+    <section class=" keyboard">
         <div class="keyboard-container">
         <div class="flex j-around keyboard-line">
             <button>A</button>
