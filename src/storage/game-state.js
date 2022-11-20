@@ -93,7 +93,6 @@ export const GameActions = {
     },
 
     CheckcWord: function({commit, state}, verifyWord){ 
-        console.log(state.game_state.current_word, state.game_state.selected_word);
         const current_word = state.game_state.current_word.toLowerCase()
         const selected_word = state.game_state.selected_word.toLowerCase()
 

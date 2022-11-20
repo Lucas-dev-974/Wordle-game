@@ -19,10 +19,9 @@ export default{
             let buttons = document.querySelectorAll('button')
 
             buttons.forEach(button => {
-                // console.log(button);
+                
                 button.addEventListener('click', (event) => {
 
-                    console.log(this.gameState().selected_word);
                     // Si le boutton delete alors call action from storage
                     if(event.target.id == 'delete-btn'){
                         this.$store.dispatch('removeLastChar', '')

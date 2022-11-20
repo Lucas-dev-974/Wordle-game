@@ -4,8 +4,4 @@ export default{
             
         }
     },
-
-    mounted(){
-        console.log('navbar moubnted ok');
-    }
 }
