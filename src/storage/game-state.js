@@ -97,27 +97,32 @@ export const GameActions = {
         const selected_word = state.game_state.selected_word.toLowerCase()
 
         if(current_word.length < 5){
-            alert('Veuillez completer la premiere ligne');
+            commit('notif', {
+                on: true, message: 'Veuillez completer la premiere ligne'
+            })
             return false;
         }
         if(!state.game_state.words_list.includes(current_word)){
-            alert('Le mot n\'est pas dans la liste !')
+            commit('notif', {
+                on: true, message: 'Le mot n\'est pas dans la liste !'
+            })
             return false
         } 
 
         if(current_word != selected_word){
             verifyWord()
-            alert('Le mot entrer new correspond pa, echec !')
+            commit('notif', {
+                on: true, message: 'Le mot entrer ne correspond pas au mot sélectionner !'
+            })
             commit('pushValidatedWord', current_word)
             commit('setCurrentWord', '')
             
             return false
         }else{
             verifyWord()
-            var textWrapper = document.querySelector('.ml12');
-            textWrapper.style.display = 'block'
-            textWrapper.textContent   = 'Bravo vous avez trouvez le bon mot !'
-            textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+            commit('notif', {
+                on: true, message: 'Bravo, vous avez trouvé le mot séléctionnerani'
+            })
         }
 
         
