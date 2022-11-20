@@ -13,10 +13,10 @@
             </div>
             <div class="nav-item flex flex-vertical-center">
 
-                <span class="title-letter">L</span>
-                <span class="title-letter bg-green">E</span>
+                <span class="title-letter  bg-green letter-bg">L</span>
+                <span class="title-letter">E</span>
                 <span class="letter-spacer"> </span>
-                <span class="title-letter bg-orange">M</span>
+                <span class="title-letter bg-orange letter-bg">M</span>
                 <span class="title-letter">O</span>
                 <span class="title-letter">T</span>
             </div>
