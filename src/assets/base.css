@@ -107,3 +107,18 @@ body {
 .full-height{
   height: calc(100vh - 60px);
 }
+
+
+#notif{
+  position: absolute;
+  top: 1%;
+  left: calc(50% - 150px);
+  width: 300px;
+  background-color: white;
+  text-align: center;
+  padding: 5px;
+  border-radius: 8px;
+  color: #181818;
+  font-size: 18px;
+
+}
