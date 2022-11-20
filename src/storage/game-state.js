@@ -4,7 +4,7 @@ export const GameStorage =  {
     words_list: ['anime', 'pomme', 'kayak', 'afpar', 'heure',],
     validated_words: [],
 
-    selected_word: 'anime',
+    selected_word: '',
     current_word: '',
     index: 0,
 
@@ -48,7 +48,8 @@ export const GameMutations = {
     // DELETE THE LAST LETTER FROM CURRENT WORD
     removeToCurrentWord: function(state, value){
         state.game_state.current_word = state.game_state.current_word.substring(0, state.game_state.current_word.length - 1);
-    }
+    },
+
 }
 
 export const GameActions = {
@@ -92,19 +93,23 @@ export const GameActions = {
     },
 
     CheckcWord: function({commit, state}, verifyWord){ 
-        if(state.game_state.current_word.length < 5){
+        console.log(state.game_state.current_word, state.game_state.selected_word);
+        const current_word = state.game_state.current_word.toLowerCase()
+        const selected_word = state.game_state.selected_word.toLowerCase()
+
+        if(current_word.length < 5){
             alert('Veuillez completer la premiere ligne');
             return false;
         }
-        if(!state.game_state.words_list.includes(state.game_state.current_word)){
+        if(!state.game_state.words_list.includes(current_word)){
             alert('Le mot n\'est pas dans la liste !')
             return false
         } 
 
-        if(state.game_state.current_word != state.game_state.selected_word){
+        if(current_word != selected_word){
             verifyWord()
             alert('Le mot entrer new correspond pa, echec !')
-            commit('pushValidatedWord', state.game_state.current_word)
+            commit('pushValidatedWord', current_word)
             commit('setCurrentWord', '')
             
             return false
@@ -114,8 +119,6 @@ export const GameActions = {
             textWrapper.style.display = 'block'
             textWrapper.textContent   = 'Bravo vous avez trouvez le bon mot !'
             textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-
-            _anime()
         }
 
         
@@ -125,25 +128,4 @@ export const GameActions = {
         data.item.style.backgroundColor = data.color
         data.item.classList.add('bg-anime')
     }
-}
-
-function _anime(){
-
-    anime.timeline({loop: false})
-    .add({
-      targets: '.ml12 .letter',
-      translateX: [40,0],
-      translateZ: 0,
-      opacity: [0,1],
-      easing: "easeOutExpo",
-      duration: 1200,
-      delay: (el, i) => 500 + 30 * i
-    }).add({
-      targets: '.ml12 .letter',
-      translateX: [0,-30],
-      opacity: [1,0],
-      easing: "easeInExpo",
-      duration: 1100,
-      delay: (el, i) => 100 + 30 * i
-    });
 }

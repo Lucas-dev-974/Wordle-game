@@ -1,6 +1,6 @@
 import { createStore } from "vuex";
-import {GameStorage, GameMutations, GameActions} from './game-state.js'
-
+import { GameStorage, GameMutations, GameActions } from "./game-state.js";
+  
 const store = createStore({
     state(){
         return {
