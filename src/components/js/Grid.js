@@ -1,5 +1,11 @@
 /* eslint-disable prettier/prettier */
+import Notif from '../Notif.vue'
+
 export default{
+    components: {
+        Notif,
+    },
+    
     mounted(){
         
         this.GenerateGrid('grid-5x6')

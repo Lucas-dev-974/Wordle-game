@@ -2,9 +2,7 @@
 <script src="./js/Grid.js"></script>
 
 <template>
-  <div id="alert">
-    <h3 class="alert-text ml12"></h3>
-  </div>
+ <Notif /> 
   
   <section id='grid-5x6'>
   </section>
