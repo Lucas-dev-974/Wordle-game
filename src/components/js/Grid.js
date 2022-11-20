@@ -4,20 +4,18 @@ export default{
         
         this.GenerateGrid('grid-5x6')
         this.EventListenersSetup()
-        // this.SelectWordInWordsList(1, this.gameState().grid_items.length)
+        this.SelectWordInWordsList(1, this.gameState().grid_items.length)
     },
 
     methods: {
-
         gameState: function(){
             return { ...this.$store.state.game_state}
         },
 
-        SelectWordInWordsList: function(minimum, maximum){
-            document.addEventListener('DOMContentLoaded', ()=>{
-                let index = Math.floor(Math.random() * (this.gameState().words_list.length + minimum - 1)) + minimum;
-                this.$store.commit('setSelectedWord', index)
-            })
+        SelectWordInWordsList: function(minimum){
+            let index = Math.floor(Math.random() * (this.gameState().words_list.length + (minimum - 1))) + minimum;
+            
+            this.$store.commit('setSelectedWord', index)
 
         },
 
@@ -51,7 +49,6 @@ export default{
                 
                 if((key_event.code.includes('Key') || key_event.code == 'Semicolon')  && this.gameState().current_word.length < this.gameState().wordSize) 
                     this.setItemValue(this.gameState().grid_items[this.gameState().index], key_event.key);
-                console.log(this.gameState().current_word);
             });
         },
 
@@ -75,11 +72,8 @@ export default{
             // Get  current_word:c_word and selected_word:s_word
             let c_word = this.gameState().current_word.split('');
             let s_word = this.gameState().selected_word.split('')
-
-            let c_word_letter_position =  []
+            
             let buffer_index = this.gameState().index - 5   
-
-            console.log(this.gameState().current_word.indexOf('m'));
 
             c_word.forEach((letter, index) => {  
                 if(c_word[index] == s_word[index]){
@@ -90,8 +84,6 @@ export default{
                     this.$store.dispatch('changeBackgroundColor', {item: this.gameState().grid_items[buffer_index + index], color: 'orange'})
                 }
             });
-
-            
         }
     }
 }
