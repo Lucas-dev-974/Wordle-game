@@ -1,12 +1,12 @@
 #grid-5x6{
 
-    width: 325px;
+    width: fit-content;
     display: grid;
     grid-template-columns: 60px 60px 60px 60px 60px;
     grid-gap:  8px; 
   
     margin: 0 auto;
-    margin-top: 3em;
+    padding-top: 3em;
 }
   
 .cell {
@@ -22,4 +22,26 @@
     font-family: 'Nunito';
     text-transform: capitalize;
     
+}
+
+
+@media screen and (max-height: 700px){
+    #grid-5x6{
+        grid-template-columns: 50px 50px 50px 50px 50px;
+    }
+    .cell{
+        width: 48px;
+        height: 48px;
+    }
+}
+
+
+@media screen and (max-width: 550px) {
+    #grid-5x6{
+        grid-template-columns: 40px 40px 40px 40px 40px;
+    }
+    .cell{
+        width: 40px;
+        height: 40px;
+    }
 }

@@ -89,13 +89,21 @@ body {
 
 .bg-green{ background-color: #3eaa42;}
 .bg-orange{ background-color: #cd8729;}
-
+.letter-bg{ width: 24px; height: 24px;}
 .title-letter{
-  padding: 2px 8px;
-  margin: 0 2px;
+  text-align: center;
+  margin: 0 3px;
   border-radius: 5px;
   font-weight: 600;
+  font-size: 14px;
   color: white;
 }.letter-spacer{
   width: 10px;
+}
+
+#app {
+  height: calc(100vh);
+}
+.full-height{
+  height: calc(100vh - 60px);
 }
